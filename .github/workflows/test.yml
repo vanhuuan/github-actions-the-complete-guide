@@ -14,6 +14,32 @@ jobs:
         working-directory: "02 Starting Project"
         run: npm ci
 
+      - name: run lint
+        working-directory: "02 Starting Project"
+        run: npm run lint
+
       - name: Run test
         working-directory: "02 Starting Project"
         run: npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: install dependencies
+        working-directory: "02 Starting Project"
+        run: npm ci
+
+      - name: Run build
+        working-directory: "02 Starting Project"
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Deploy
+        run: echo "Deploying application"
