@@ -1,0 +1,18 @@
+name: test 02 starting project
+on: 
+  issues:
+    types: [opened]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: install dependencies
+        working-directory: "02 Starting Project"
+        run: npm ci
+
+      - name: Run test
+        working-directory: "02 Starting Project"
+        run: npm test
