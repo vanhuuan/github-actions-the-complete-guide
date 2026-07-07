@@ -10,13 +10,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Change directory
+      - name: install dependencies
         run: |
           cd "02 Starting Project"
-          pwd
-
-      - name: install dependencies
-        run: npm ci
+          npm ci
 
       - name: Run test
         run: npm test
