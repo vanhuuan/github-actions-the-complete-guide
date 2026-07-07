@@ -1,4 +1,4 @@
-name: test 02 starting project
+name: issue 02 starting project
 on: 
   issues:
     types: [opened]
