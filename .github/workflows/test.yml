@@ -45,8 +45,13 @@ jobs:
     needs: build  
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
+      - name: Download artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: dist-files
+      
+      - name: Output contents of dist folder
+        run: ls
 
       - name: Deploy
         run: echo "Deploying application"
