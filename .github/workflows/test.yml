@@ -11,9 +11,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: install dependencies
-        run: |
-          cd "02 Starting Project"
-          npm ci
+        working-directory: "02 Starting Project"
+        run: npm ci
 
       - name: Run test
+        working-directory: "02 Starting Project"
         run: npm test
