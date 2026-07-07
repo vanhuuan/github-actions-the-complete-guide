@@ -22,6 +22,7 @@ jobs:
         working-directory: "02 Starting Project"
         run: npm test
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,7 +36,16 @@ jobs:
         working-directory: "02 Starting Project"
         run: npm run build
 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist-files
+          path: |
+            "02 Starting Project/dist"
+            package.json
+
   deploy:
+    needs: build  
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
