@@ -6,6 +6,12 @@ jobs:
             matrix:
                 node-version: [22, 24]
                 os: [ubuntu-latest, windows-latest]
+                include:
+                    - node-version: 18
+                      os: ubuntu-latest
+                exclude:
+                    - node-version: 22
+                      os: windows-latest
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v7
