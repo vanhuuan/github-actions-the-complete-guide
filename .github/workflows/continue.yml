@@ -71,4 +71,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get build artifacts
-        uses: ./.github/workflows/reuseable.yml
+        uses: ./.github/workflows/reuseable.yml@main
