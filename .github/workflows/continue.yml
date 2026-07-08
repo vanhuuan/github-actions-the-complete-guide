@@ -68,7 +68,4 @@ jobs:
           path: dist
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get build artifacts
-        uses: ./.github/workflows/reuseable.yml@main
+    uses: ./.github/workflows/reuseable.yml
